@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/bick/placeholderjs',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'PlaceholderJS',
   },
 }
 
