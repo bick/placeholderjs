@@ -1,0 +1,28 @@
+'use client'
+
+import Sidebar from "@/components/sidebar";
+import Code from "@/components/ui/code";
+
+export default function Home() {
+    return (
+        <div className="flex container">
+            <Sidebar/>
+            <main id="content" className="flex-1 p-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-8" id="installation">
+                        <h2 className="text-3xl font-bold mb-4">Installation</h2>
+                        <Code code="npm install placeholder"/>
+                    </div>
+                    <div className="mb-8" id="usage-example-1">
+                        <h2 className="text-3xl font-bold mb-4">Usage Example 1</h2>
+                        <Code code={`import { placeholder } from 'placeholder';\n\nplaceholder('Hello World');`}/>
+                    </div>
+                    <div className="mb-8" id="usage-example-2">
+                        <h2 className="text-3xl font-bold mb-4">Usage Example 2</h2>
+                        <Code code={`const result = placeholder('Another example');\nconsole.log(result);`}/>
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
+}

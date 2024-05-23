@@ -62,11 +62,11 @@ export default nextConfig;
 
 Perfect! This is all you need to configure Next.js to deploy on GitHub Pages.
 
-### Add base path to `page.tsx`
+### Add base path to `page.mdx`
 
-Next, you will need to add the base path to images in `page.tsx` file. This is required for the images to appear on GitHub Pages.
+Next, you will need to add the base path to images in `page.mdx` file. This is required for the images to appear on GitHub Pages.
 
-1. Open `app/page.tsx`
+1. Open `app/page.mdx`
 2. Find the `Image` components
 3. Add `/nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
 
@@ -81,7 +81,7 @@ Next, you will need to add the base path to images in `page.tsx` file. This is r
    />
 ```
 
-4. Save the `page.tsx` file
+4. Save the `page.mdx` file
 
 Learn more by reading the official documentation [for basePath and images](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
 
