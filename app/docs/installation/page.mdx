@@ -1,9 +1,18 @@
 import MdxLayout from '@/components/mdx-layout'
 import Code from '@/components/ui/code'
 
-# Hello world!
-<Code code="npm install placeholder" />
+# Installation
+PlaceholderJS is mainly supported for React applications. You can install it using npm or yarn.
 
-export default function Docs({ children }) {
+npm:
+<Code code="npm install placeholder" className="mx-4" />
+
+yarn:
+<Code code="yarn add placeholder" className="mb-4" />
+
+pnpm:
+<Code code="pnpm add placeholder" className="mb-4" />
+
+export default function Docs({children}) {
     return <MdxLayout>{children}</MdxLayout>
 }

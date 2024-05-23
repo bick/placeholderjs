@@ -95,6 +95,7 @@ a {
 
 .header {
   margin-bottom: 1rem;
+
   .logo {
     color: #fff;
     text-decoration: none;
@@ -160,7 +161,19 @@ a {
 }
 
 h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.5;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 2rem 0 .5rem;
+}
+
+p {
+  line-height: 2;
 }

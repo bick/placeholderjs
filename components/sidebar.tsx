@@ -36,9 +36,8 @@ const Sidebar = () => {
             </header>
 
             <aside id="sidebar"
-                   className="md:w-64 w-3/4 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:justify-between overflow-y-auto"
+                   className="md:w-64 w-3/4 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col overflow-y-auto"
                    data-dev-hint="sidebar; px-0 for frameless; px-2 for visually inset the navigation">
-                <span className="mb-4 opacity-75">Getting Started</span>
                 <nav data-dev-hint="main navigation" className="space-y-3">
                     <a href="/docs"
                        className="flex items-center transition duration-200">
