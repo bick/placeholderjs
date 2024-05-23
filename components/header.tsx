@@ -6,7 +6,7 @@ import { ModeToggle } from '@/components/theme-toggle';
 
 const Header = () => {
     return (
-        <div id="nav" className="py-6 w-full">
+        <div id="nav" className="header py-6 w-full">
             <div className="container mx-auto flex justify-between items-center px-12">
                 <Link href='/'>
                     <div className="flex items-center max-w-24 max-h-6">
