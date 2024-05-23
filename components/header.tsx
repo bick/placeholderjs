@@ -23,11 +23,6 @@ const Header = () => {
                             Docs
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/examples">
-                            Examples
-                        </Link>
-                    </li>
                     <span aria-hidden="true"
                           className="bg-[rgba(0,0,0,.25)] dark:bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
                     <li>
