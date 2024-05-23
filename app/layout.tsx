@@ -19,7 +19,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
             enableSystem
             disableTransitionOnChange
         >
-            <Header />
+            <Header/>
             {children}
             <Toaster/>
         </ThemeProvider>

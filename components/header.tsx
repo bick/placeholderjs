@@ -1,13 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import {FaGithub} from 'react-icons/fa'
-import { SiNpm } from "react-icons/si";
+import {usePathname} from 'next/navigation';
+import {FaGithub} from 'react-icons/fa';
+import {SiNpm} from 'react-icons/si';
 import {ModeToggle} from '@/components/theme-toggle';
 
 const Header = () => {
+    const pathname = usePathname();
+    const isHomePage = pathname === '/';
+
     return (
-        <div id="nav" className="header py-6 w-full">
+        <div id="nav" className={`header py-6 w-full ${isHomePage ? 'absolute' : ''}`}>
             <div className="container mx-auto flex justify-between items-center">
                 <Link href='/' className="logo">
                     PlaceholderJS

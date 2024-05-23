@@ -3,7 +3,7 @@ import Code from "@/components/ui/code";
 export default function Home() {
     return (
         <>
-            <div className="flex container mx-auto max-w-5xl text-center h-[70vh]">
+            <div className="flex container mx-auto max-w-5xl text-center h-[90vh] hero">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-7xl font-black leading-tight mb-6">Ridiculously simple placeholders for
                         React</h1>

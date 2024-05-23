@@ -177,3 +177,12 @@ h2 {
 p {
   line-height: 2;
 }
+
+.hero {
+  padding: 7rem 0;
+  background-image: url('/background.svg');
+  background-size: 1000px;
+  background-position-y: -500px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
