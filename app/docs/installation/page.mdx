@@ -1,23 +1,9 @@
-'use client'
+import MdxLayout from '@/components/mdx-layout'
+import Code from '@/components/ui/code'
 
+# Hello world!
+<Code code="npm install placeholder" />
 
-
-import Sidebar from "@/components/sidebar";
-import Code from "@/components/ui/code";
-
-export default function Home() {
-    return (
-        <div className="flex container">
-            <Sidebar/>
-            <main id="content" className="flex-1 p-6 lg:px-8">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-4">Installation</h2>
-                    To install the <code>placeholder</code> package, you can use the following command:
-                    <Code code="npm install placeholder"/>
-                    <p>This will add the <code>placeholder</code> package to your project, allowing you to use its
-                        features in your application.</p>
-                </div>
-            </main>
-        </div>
-    );
+export default function Docs({ children }) {
+    return <MdxLayout>{children}</MdxLayout>
 }

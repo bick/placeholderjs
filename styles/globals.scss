@@ -94,6 +94,7 @@ a {
 }
 
 .header {
+  margin-bottom: 1rem;
   .logo {
     color: #fff;
     text-decoration: none;
@@ -156,4 +157,10 @@ a {
   #sidebar {
     --tw-translate-x: 0;
   }
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
 }

@@ -36,23 +36,34 @@ const Sidebar = () => {
             </header>
 
             <aside id="sidebar"
-                   className="md:w-64 w-3/4 space-y-6 pt-6 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:justify-between overflow-y-auto"
+                   className="md:w-64 w-3/4 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out md:flex md:flex-col md:justify-between overflow-y-auto"
                    data-dev-hint="sidebar; px-0 for frameless; px-2 for visually inset the navigation">
-                <div className="flex flex-col space-y-6"
-                     data-dev-hint="optional div for having an extra footer navigation">
-                    <span className="text-2xl font-extrabold whitespace-nowrap truncate">Documentation</span>
-
-                    <nav data-dev-hint="main navigation">
-                        <a href="/docs"
-                           className="flex items-center space-x-2 py-2 px-4 transition duration-200">
-                            <span>Getting Started</span>
-                        </a>
-                        <a href="/docs/installation"
-                           className="flex items-center space-x-2 py-2 px-4 transition duration-200">
-                            <span>Installation</span>
-                        </a>
-                    </nav>
-                </div>
+                <span className="mb-4 opacity-75">Getting Started</span>
+                <nav data-dev-hint="main navigation" className="space-y-3">
+                    <a href="/docs"
+                       className="flex items-center transition duration-200">
+                        <span>Getting Started</span>
+                    </a>
+                    <a href="/docs/installation"
+                       className="flex items-center transition duration-200">
+                        <span>Installation</span>
+                    </a>
+                </nav>
+                <span className="mt-8 mb-4 opacity-75">Usage</span>
+                <nav data-dev-hint="main navigation" className="space-y-3">
+                    <a href="/docs/usage/react"
+                       className="flex items-center transition duration-200">
+                        <span>React</span>
+                    </a>
+                    <a href="/docs/usage/nextjs"
+                       className="flex items-center transition duration-200">
+                        <span>NextJS</span>
+                    </a>
+                    <a href="/docs/usage/cdn"
+                       className="flex items-center transition duration-200">
+                        <span>CDN</span>
+                    </a>
+                </nav>
             </aside>
         </>
     );
