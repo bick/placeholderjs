@@ -44,7 +44,7 @@ const Code: React.FC<CodeProps> = ({code}) => {
     };
 
     return (
-        <div className="relative group">
+        <div className="relative group my-6">
             <div
                 className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-[#F5F8FA] dark:bg-[#111] dark:border-[rgba(255,255,255,.15)] dark:text-white border border-[#d8dee4] rounded-lg p-4 pl-6">
                 <span className="flex gap-4">
