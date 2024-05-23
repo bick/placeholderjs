@@ -64,6 +64,17 @@ const Sidebar = () => {
                         <span>CDN</span>
                     </a>
                 </nav>
+                <span className="mt-8 mb-4 opacity-75">Contributing</span>
+                <nav data-dev-hint="main navigation" className="space-y-3">
+                    <a href="/docs/usage/react"
+                       className="flex items-center transition duration-200">
+                        <span>Contribution Guidelines</span>
+                    </a>
+                    <a href="/docs/usage/nextjs"
+                       className="flex items-center transition duration-200">
+                        <span>Pull Request Template</span>
+                    </a>
+                </nav>
             </aside>
         </>
     );
