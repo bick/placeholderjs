@@ -2,8 +2,9 @@ import withMDX from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
     basePath: "",
+    reactStrictMode: true,
+    output: 'standalone',
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
     images: {
         unoptimized: true,
