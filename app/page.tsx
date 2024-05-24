@@ -1,5 +1,5 @@
 import Code from "@/components/ui/code";
-import {FaNpm} from "react-icons/fa6";
+import {FaNpm} from "react-icons/fa";
 
 export default function Home() {
     return (
