@@ -1,5 +1,4 @@
 import {NextRequest, NextResponse} from 'next/server';
-import {createCanvas} from 'canvas';
 
 export async function GET(req: NextRequest, {params}: { params: { dimensions: string } }) {
     const {dimensions} = params;
@@ -9,22 +8,18 @@ export async function GET(req: NextRequest, {params}: { params: { dimensions: st
         return NextResponse.json({error: 'Invalid dimensions'}, {status: 400});
     }
 
-    const canvas = createCanvas(width, height);
-    const context = canvas.getContext('2d');
+    const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#cccccc" />
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#000000">
+        ${width}x${height}
+      </text>
+    </svg>
+  `;
 
-    context.fillStyle = '#cccccc';
-    context.fillRect(0, 0, width, height);
-
-    context.fillStyle = '#000000';
-    context.font = '20px Arial';
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText(`${width}x${height}`, width / 2, height / 2);
-
-    const buffer = canvas.toBuffer('image/png');
-    return new NextResponse(buffer, {
+    return new NextResponse(svg, {
         headers: {
-            'Content-Type': 'image/png',
+            'Content-Type': 'image/svg+xml',
         },
     });
 }
