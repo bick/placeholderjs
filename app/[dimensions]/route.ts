@@ -20,14 +20,13 @@ export async function GET(request: NextRequest, {params}: { params: { dimensions
         .png()
         .toBuffer();
 
-    return new NextResponse(buffer, {
+    const response = new NextResponse(buffer, {
         status: 200,
         headers: {
             'Content-Type': 'image/png',
+            'Access-Control-Allow-Origin': '*', // Add CORS header
         },
     });
-}
 
-export async function generateStaticParams() {
-    return []; // Return an empty array because this API route is not pre-rendered
+    return response;
 }
