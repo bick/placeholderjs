@@ -1,37 +1,30 @@
 import {NextRequest, NextResponse} from 'next/server';
-import sharp from 'sharp';
+import {createCanvas} from 'canvas';
 
-export async function GET(request: NextRequest, {params}: { params: { dimensions: string } }) {
+export async function GET(req: NextRequest, {params}: { params: { dimensions: string } }) {
     const {dimensions} = params;
     const [width, height] = dimensions.split('x').map(Number);
 
-    if (isNaN(width) || isNaN(height)) {
+    if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
         return NextResponse.json({error: 'Invalid dimensions'}, {status: 400});
     }
 
-    const svgImage = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#CCCCCC" />
-      <text x="50%" y="50%" font-size="20" text-anchor="middle" fill="#000000" dy=".3em">${width}x${height}</text>
-    </svg>
-  `;
+    const canvas = createCanvas(width, height);
+    const context = canvas.getContext('2d');
 
-    try {
-        const buffer = await sharp(Buffer.from(svgImage))
-            .png()
-            .toBuffer();
+    context.fillStyle = '#cccccc';
+    context.fillRect(0, 0, width, height);
 
-        const response = new NextResponse(buffer, {
-            status: 200,
-            headers: {
-                'Content-Type': 'image/png',
-                'Access-Control-Allow-Origin': '*', // Add CORS header
-                'Cache-Control': 'public, max-age=31536000, immutable', // Cache the image for better performance
-            },
-        });
+    context.fillStyle = '#000000';
+    context.font = '20px Arial';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(`${width}x${height}`, width / 2, height / 2);
 
-        return response;
-    } catch (error) {
-        return NextResponse.json({error: 'Error generating image'}, {status: 500});
-    }
+    const buffer = canvas.toBuffer('image/png');
+    return new NextResponse(buffer, {
+        headers: {
+            'Content-Type': 'image/png',
+        },
+    });
 }
