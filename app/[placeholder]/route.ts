@@ -10,6 +10,9 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
         return NextResponse.json({error: 'Invalid dimensions'}, {status: 400});
     }
 
+    const minDimension = Math.min(width, height);
+    const fontSize = minDimension * 0.125;
+
     const svg = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <rect width="100%" height="100%" fill="#cccccc" />
@@ -18,7 +21,7 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
         y="50%" 
         dominant-baseline="middle" 
         text-anchor="middle" 
-        font-size="20" 
+        font-size="${fontSize}" 
         fill="#000000"
         font-family='-apple-system, "Inter", sans-serif'>
         ${width}x${height}
