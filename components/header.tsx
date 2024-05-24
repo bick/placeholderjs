@@ -19,6 +19,11 @@ const Header = () => {
 
                 <ul className="flex items-center max-md:hidden">
                     <li>
+                        <Link href="/#usage">
+                            Usage
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/docs">
                             Docs
                         </Link>
