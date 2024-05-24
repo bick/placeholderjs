@@ -25,13 +25,20 @@ export default function Home() {
             <div className="flex container mx-auto text-center py-12 justify-center">
                 <div className="flex flex-col" id="usage">
                     <h2 className="text-4xl font-black leading-tight mb-4">Using the CDN</h2>
-                    <p className="text-xl mb-12 opacity-75">To use PlaceholderJS via the CDN for simplicity and/or compatibility
-                        with non-JS tools, you can simply use the scheme <code>https://placeholderjs.com/HEIGHTxWIDTH</code>.</p>
+                    <p className="text-xl mb-24 opacity-75">To use PlaceholderJS via the CDN for simplicity and/or
+                        compatibility
+                        with non-JS tools, you can simply use the
+                        scheme <code>https://placeholderjs.com/HEIGHTxWIDTH</code>.</p>
 
                     <h3 className="text-3xl font-black leading-tight mb-4">Size</h3>
-                    <p className="text-xl mb-8 opacity-75">Specify the size of the placeholder image by adding the width and
+                    <p className="text-xl mb-8 opacity-75">Specify the size of the placeholder image by adding the width
+                        and
                         height to the URL. Here is an example of how that works for a <code>500 x 500</code> image.</p>
                     <Code code="https://placeholderjs.com/500x500"/>
+
+                    <h3 className="text-3xl font-black leading-tight mt-12 mb-4">Text</h3>
+                    <p className="text-xl mb-8 opacity-75">Specify custom text in the placeholder image by adding your text to the URL. Here is an example of how that works for <code>Hello World!</code></p>
+                    <Code code="https://placeholderjs.com/500x500?text=Hello+World!"/>
                 </div>
             </div>
         </>

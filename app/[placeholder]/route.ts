@@ -2,7 +2,8 @@ import {NextRequest, NextResponse} from 'next/server';
 
 export async function GET(req: NextRequest, {params}: { params: { placeholder: string } }) {
     const {placeholder} = params;
-    const [width, height] = placeholder.split('x').map(Number);
+    const [dimensions, queryString] = placeholder.split('?');
+    const [width, height] = dimensions.split('x').map(Number);
 
     const MAX_DIMENSION = 4000;
 
@@ -10,8 +11,14 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
         return NextResponse.json({error: 'Invalid dimensions'}, {status: 400});
     }
 
+    let customText = `${width}x${height}`; // Default text
+
+    if (req.nextUrl.searchParams.has('text')) {
+        customText = req.nextUrl.searchParams.get('text')?.replace(/\+/g, ' ') || customText;
+    }
+
     const minDimension = Math.min(width, height);
-    const fontSize = minDimension * 0.125;
+    const fontSize = minDimension * 0.05; // Font size as 5% of the smaller dimension
 
     const svg = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +31,7 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
         font-size="${fontSize}" 
         fill="#000000"
         font-family='-apple-system, "Inter", sans-serif'>
-        ${width}x${height}
+        ${customText}
       </text>
     </svg>
   `;
