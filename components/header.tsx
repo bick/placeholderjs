@@ -31,7 +31,7 @@ const Header = () => {
                     <span aria-hidden="true"
                           className="bg-[rgba(0,0,0,.25)] dark:bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
                     <li>
-                        <Link href="https://github.com/bick/placeholder" className="mx-2" target="_blank">
+                        <Link href="https://github.com/bick/placeholderjs" className="mx-2" target="_blank">
                             <FaGithub className="text-xl"/>
                         </Link>
                     </li>

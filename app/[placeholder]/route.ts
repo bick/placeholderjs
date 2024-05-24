@@ -4,7 +4,9 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
     const {placeholder} = params;
     const [width, height] = placeholder.split('x').map(Number);
 
-    if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+    const MAX_DIMENSION = 4000;
+
+    if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0 || width > MAX_DIMENSION || height > MAX_DIMENSION) {
         return NextResponse.json({error: 'Invalid dimensions'}, {status: 400});
     }
 
