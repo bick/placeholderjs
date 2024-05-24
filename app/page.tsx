@@ -4,7 +4,7 @@ import {FaNpm} from "react-icons/fa";
 export default function Home() {
     return (
         <>
-            <div className="flex container mx-auto max-w-5xl text-center h-[90vh] hero">
+            <div className="flex container mx-auto max-w-5xl text-center h-[80vh] hero">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-7xl font-black leading-tight mb-6">Ridiculously simple and lightweight
                         placeholders</h1>
@@ -23,11 +23,14 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex container mx-auto text-center py-12 justify-center">
-                <div className="flex flex-col">
-                    <h2 className="text-4xl font-black leading-tight mb-6">Usage</h2>
-                    <p className="text-xl mb-12">Add a placeholder to your project using
-                        the <code>Placeholder</code>
-                        component.</p>
+                <div className="flex flex-col" id="usage">
+                    <h2 className="text-4xl font-black leading-tight mb-4">Using the CDN</h2>
+                    <p className="text-xl mb-12 opacity-75">To use PlaceholderJS via the CDN for simplicity and/or compatibility
+                        with non-JS tools, you can simply use the scheme <code>https://placeholderjs.com/HEIGHTxWIDTH</code>.</p>
+
+                    <h3 className="text-3xl font-black leading-tight mb-4">Size</h3>
+                    <p className="text-xl mb-8 opacity-75">Specify the size of the placeholder image by adding the width and
+                        height to the URL. Here is an example of how that works for a <code>500 x 500</code> image.</p>
                     <Code code="https://placeholderjs.com/500x500"/>
                 </div>
             </div>
