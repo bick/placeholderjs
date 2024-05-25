@@ -46,7 +46,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header id="nav" className={`header py-6 w-full ${isHomePage ? 'absolute' : ''}`}>
+        <header id="nav" className={`header py-6 w-full z-50 ${isHomePage ? 'absolute' : ''}`}>
             <div className="container mx-auto flex items-center">
                 <Link href='/' className="logo text-black dark:text-white">
                     PlaceholderJS
