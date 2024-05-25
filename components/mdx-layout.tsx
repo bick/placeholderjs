@@ -9,7 +9,7 @@ export default function MdxLayout({children}: { children: React.ReactNode }) {
                     <span className="text-[14px] ml-auto opacity-75 font-normal">Last updated: May 24, 2024</span>
                 </div>
             </div>
-            <div className="flex container">
+            <div className="flex container py-6">
                 <Sidebar/>
                 <div className="flex flex-col">
                     {children}
