@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <div className="flex container mx-auto max-w-5xl text-center h-[80vh] hero">
+            <div className="flex container mx-auto max-w-5xl text-center hero">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-7xl font-black leading-tight mb-6">Ridiculously simple and lightweight
                         placeholders</h1>
@@ -20,7 +20,7 @@ export default function Home() {
                             <Code type="command" code="https://placeholderjs.com/500x500"/>
                         </div>
                         <div className="flex flex-col justify-center">
-                            <span className="text-4xl font-bold mb-2 mx-auto h-8"><FaNpm/></span>
+                            <span className="text-[42px] font-bold mb-2 mx-auto h-8 flex align-center"><FaNpm/></span>
                             <Code type="command" code="npm install placeholder"/>
                         </div>
                     </div>
