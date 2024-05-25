@@ -11,7 +11,7 @@ export default function MdxLayout({children}: { children: React.ReactNode }) {
             </div>
             <div className="flex container py-6">
                 <Sidebar/>
-                <div className="flex flex-col">
+                <div className="flex flex-col flex-2">
                     {children}
                 </div>
             </div>

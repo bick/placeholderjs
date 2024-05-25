@@ -2,7 +2,7 @@
 
 const Sidebar = () => {
     return (
-        <>
+        <div className="flex">
             <input type="checkbox" id="menu-open" className="hidden"/>
 
             <label htmlFor="menu-open"
@@ -75,7 +75,7 @@ const Sidebar = () => {
                     </a>
                 </nav>
             </aside>
-        </>
+        </div>
     );
 };
 
