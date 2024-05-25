@@ -10,12 +10,12 @@ export default function Home() {
         <>
             <div className="flex container mx-auto max-w-5xl text-center hero">
                 <div className="flex flex-col my-auto">
-                    <h1 className="text-7xl font-black leading-tight mb-6">Ridiculously simple and lightweight
+                    <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">Ridiculously simple and lightweight
                         placeholders</h1>
                     <p className="text-2xl mb-12">A free placeholder service designed for developers. Integrates
                         seamlessly with React & NextJS.</p>
-                    <div className="grid grid-cols-2">
-                        <div className="flex flex-col ">
+                    <div className="flex flex-col md:grid md:grid-cols-2">
+                        <div className="flex flex-col mb-6 md:mb-0">
                             <span className="text-xl font-bold mb-2 h-8">CDN</span>
                             <Code type="command" code="https://placeholderjs.com/500x500"/>
                         </div>
