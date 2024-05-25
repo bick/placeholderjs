@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useToast } from "@/components/ui/use-toast";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import React, {useState} from 'react';
+import {useToast} from "@/components/ui/use-toast";
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeProps {
     code: string;
-    className?: string; // Add className to the interface
+    className?: string;
+    type: 'command' | 'code';
 }
 
 // Extracting only the color properties from okaidia
@@ -15,14 +16,14 @@ const customStyle = {
     ...Object.keys(okaidia).reduce((acc, key) => {
         const style = okaidia[key];
         if (style && typeof style === 'object') {
-            acc[key] = { color: style.color };
+            acc[key] = {color: style.color};
         }
         return acc;
     }, {} as any),
 };
 
-const Code: React.FC<CodeProps> = ({ code, className }) => {
-    const { toast } = useToast();
+const Code: React.FC<CodeProps> = ({code, className, type}) => {
+    const {toast} = useToast();
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
@@ -46,13 +47,16 @@ const Code: React.FC<CodeProps> = ({ code, className }) => {
 
     return (
         <div className='relative group'>
-            <div className={`${className} text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-[#F5F8FA] dark:bg-[#111] dark:border-[rgba(255,255,255,.15)] dark:text-white border border-[#d8dee4] rounded-lg p-4 pl-6`}>
+            <div
+                className={`${className} text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-[#F5F8FA] dark:bg-[#111] dark:border-[rgba(255,255,255,.15)] dark:text-white border border-[#d8dee4] rounded-lg p-4 pl-6`}>
                 <span className="flex gap-4">
-                    <span className="shrink-0 text-gray-500">
-                        $
-                    </span>
+                    {type === 'command' && (
+                        <span className="shrink-0 text-gray-500">
+                            $
+                        </span>
+                    )}
                     <span className="flex-1">
-                        <SyntaxHighlighter language="javascript" style={customStyle}>
+                        <SyntaxHighlighter language="javascript" style={customStyle} showLineNumbers={type === 'code'}>
                             {code}
                         </SyntaxHighlighter>
                     </span>
@@ -64,7 +68,7 @@ const Code: React.FC<CodeProps> = ({ code, className }) => {
                              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd"
                                   d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-                                  clipRule="evenodd" />
+                                  clipRule="evenodd"/>
                         </svg>
                     ) : (
                         <svg className="shrink-0 h-5 w-5 transition opacity-75 text-gray-500 group-hover:opacity-100"

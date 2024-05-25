@@ -1,31 +1,49 @@
 'use client';
 
+import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {FaGithub} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
 import {ModeToggle} from '@/components/theme-toggle';
+import {Badge} from "@/components/ui/badge"
 
 const Header = () => {
+    const [version, setVersion] = useState('');
     const pathname = usePathname();
     const isHomePage = pathname === '/';
 
+    useEffect(() => {
+        fetch('https://registry.npmjs.org/placeholder')
+            .then(response => response.json())
+            .then(data => setVersion(data['dist-tags'].latest))
+            .catch(console.error);
+    }, []);
+
     return (
-        <div id="nav" className={`header py-6 w-full ${isHomePage ? 'absolute' : ''}`}>
-            <div className="container mx-auto flex justify-between items-center">
+        <header id="nav" className={`header py-6 w-full ${isHomePage ? 'absolute' : ''}`}>
+            <div className="container mx-auto flex items-center">
                 <Link href='/' className="logo">
                     PlaceholderJS
                 </Link>
+                <sup>
+                    <Badge variant="outline" className="ml-2">v{version}</Badge>
+                </sup>
 
-                <ul className="flex items-center max-md:hidden">
+                <ul className="flex items-center max-md:hidden ml-auto">
+                    <li>
+                        <Link href="/docs">
+                            Docs
+                        </Link>
+                    </li>
                     <li>
                         <Link href="/#usage">
                             Usage
                         </Link>
                     </li>
                     <li>
-                        <Link href="/docs">
-                            Docs
+                        <Link href="https://github.com/bick/placeholder/releases">
+                            Changelog
                         </Link>
                     </li>
                     <span aria-hidden="true"
@@ -45,7 +63,7 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
-        </div>
+        </header>
     );
 };
 
