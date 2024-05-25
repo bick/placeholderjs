@@ -6,7 +6,7 @@ import {usePathname} from 'next/navigation';
 import {FaGithub} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
 import {ModeToggle} from '@/components/theme-toggle';
-import {Badge} from "@/components/ui/badge"
+import {Badge} from '@/components/ui/badge';
 
 const Header = () => {
     const [version, setVersion] = useState('');
@@ -14,10 +14,35 @@ const Header = () => {
     const isHomePage = pathname === '/';
 
     useEffect(() => {
-        fetch('https://registry.npmjs.org/placeholder')
-            .then(response => response.json())
-            .then(data => setVersion(data['dist-tags'].latest))
-            .catch(console.error);
+        const checkVersion = () => {
+            // Check if there's a version and timestamp stored in localStorage
+            const savedVersion = localStorage.getItem('npmVersion');
+            const timestamp = localStorage.getItem('timestamp');
+
+            // If data exists and it's been less than an hour since last fetch, use cached version
+            if (savedVersion && timestamp && (new Date().getTime() - Number(timestamp) < 3600000)) {
+                setVersion(savedVersion);
+            } else {
+                // Fetch new version and update local storage
+                fetch('https://registry.npmjs.org/placeholder')
+                    .then(response => response.json())
+                    .then(data => {
+                        const latestVersion = data['dist-tags'].latest;
+                        setVersion(latestVersion);
+                        localStorage.setItem('npmVersion', latestVersion);
+                        localStorage.setItem('timestamp', new Date().getTime().toString());
+                    })
+                    .catch(console.error);
+            }
+        };
+
+        checkVersion();
+
+        // Set up an interval to refetch every hour
+        const intervalId = setInterval(checkVersion, 3600000);
+
+        // Cleanup interval and timeout on unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     return (
