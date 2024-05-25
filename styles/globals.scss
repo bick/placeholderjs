@@ -168,7 +168,7 @@ h1 {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
@@ -180,13 +180,14 @@ h2 {
 
 p {
   line-height: 2;
+  margin: 1rem 0;
 }
 
 .hero {
   padding: 7rem 0;
   background-image: url('/background.svg');
-  background-size: 1000px;
-  background-position-y: -500px;
+  background-size: cover;
+  background-position-y: 100%;
   background-position-x: center;
   background-repeat: no-repeat;
 }
