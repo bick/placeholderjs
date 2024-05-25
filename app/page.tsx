@@ -2,7 +2,8 @@ import Code from "@/components/ui/code";
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import {FaNpm} from "react-icons/fa";
-import { IoDocumentText } from "react-icons/io5";
+import {IoDocumentText} from "react-icons/io5";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -50,9 +51,12 @@ export default function Home() {
             <div className="flex container mt-12 mx-auto text-center py-12 justify-center">
                 <div className="flex flex-col" id="usage">
                     <h2 className="text-4xl font-black leading-tight mb-4">Using with JS</h2>
-                    <p className="text-xl mb-8 opacity-75">PlaceholderJS works seamlessly with all major JavaScript frameworks including React, NextJS, </p>
-                    <Button className="mx-auto">
-                        <IoDocumentText className="mr-2 h-4 w-4"/> View PlaceholderJS Docs
+                    <p className="text-xl mb-8 opacity-75">PlaceholderJS works seamlessly with all major JavaScript
+                        frameworks including React, NextJS, </p>
+                    <Button className="mx-auto" asChild>
+                        <Link href="/docs">
+                            <IoDocumentText className="mr-2 h-4 w-4"/> View PlaceholderJS Docs
+                        </Link>
                     </Button>
                 </div>
             </div>

@@ -73,16 +73,12 @@ body {
 
 a {
   display: flex;
-  border-bottom: 1px solid var(--link);
-  text-decoration: underline;
-  padding-bottom: 1px;
+  text-decoration: none;
   max-width: fit-content;
   color: #2997ff;
   transition: 0.2s ease;
 
   &:hover {
-    border-bottom: 1px solid var(--link);
-    text-decoration: none !important;
     opacity: 0.75;
   }
 
@@ -167,7 +163,7 @@ a {
 h1 {
   font-size: 2rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1;
   margin-bottom: 2rem;
 }
 
