@@ -30,7 +30,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
         navigator.clipboard.writeText(code).then(() => {
             toast({
                 description: 'Copied to clipboard!',
-                duration: 2000
+                duration: 2000,
             });
             setCopied(true);
             setTimeout(() => {
@@ -39,7 +39,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
         }, (err) => {
             toast({
                 description: 'Failed to copy!',
-                duration: 2000
+                duration: 2000,
             });
             console.error('Could not copy text: ', err);
         });
@@ -55,11 +55,9 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                             $
                         </span>
                     )}
-                    <span className="flex-1">
-                        <SyntaxHighlighter language="javascript" style={customStyle} showLineNumbers={type === 'code'}>
+                    <SyntaxHighlighter language="javascript" style={customStyle} className="code-container" showLineNumbers={type === 'code'}>
                             {code}
                         </SyntaxHighlighter>
-                    </span>
                 </span>
                 <button onClick={handleCopy}>
                     {copied ? (

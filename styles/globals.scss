@@ -190,3 +190,13 @@ p {
 code {
   font-size: 16px;
 }
+
+.code-container {
+  code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+  }
+}
+

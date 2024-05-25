@@ -2,13 +2,14 @@ import MdxLayout from '@/components/mdx-layout'
 import Code from '@/components/ui/code'
 
 # Hello world!
-<Code code={`import Image from "next/image"; // Import the NextJS image component
+<Code type="code" code={`import Image from "next/image"; // Import the NextJS image component
 
 // Use the image
 <Image src="https://placeholderjs.com/500x500" alt="500x500 placeholder" width={500} height={500} />`}/>
 
-In case you cannot see the image, you need to add the image source to the NextJS configuration.You can do this by adding the domain to the`next.config.js` file.
-<Code code={`const nextConfig = {
+In case you cannot see the image, you need to add the image source to the NextJS configuration. You can do this by adding the domain to the `next.config.js` file.
+
+<Code type="code" code={`const nextConfig = {
   images: {
     domains: ['placeholderjs.com'], // Add allowed image source
   },
