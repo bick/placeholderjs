@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className="flex py-24 mt-24 border-t w-full">
             <div className="container flex text-center w-full justify-center">
                 Copyright &copy; 2024 PlaceholderJS. All Rights Reserved. Made by&nbsp;
-                <Link href="https://owenbick.com" target="_blank">Owen Bick</Link>&nbsp;with ❤️
+                <a href="https://owenbick.com" target="_blank">Owen Bick</a>&nbsp;with ❤️
             </div>
         </footer>
     );

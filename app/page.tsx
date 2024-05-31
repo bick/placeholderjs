@@ -3,14 +3,15 @@ import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import {FaNpm} from "react-icons/fa";
 import {IoDocumentText} from "react-icons/io5";
-import Link from "next/link";
+import styles from "@/styles/layout.module.scss";
 
 export default function Home() {
     return (
-        <>
+        <div className={styles.layout}>
             <div className="flex container mx-auto max-w-5xl text-center hero">
                 <div className="flex flex-col my-auto">
-                    <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">Ridiculously simple and lightweight
+                    <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">Ridiculously simple and
+                        lightweight
                         placeholders</h1>
                     <p className="text-2xl mb-12">A free placeholder service designed for developers. Integrates
                         seamlessly with React & NextJS.</p>
@@ -54,12 +55,12 @@ export default function Home() {
                     <p className="text-xl mb-8 opacity-75">PlaceholderJS works seamlessly with all major JavaScript
                         frameworks including React, NextJS, </p>
                     <Button className="mx-auto" asChild>
-                        <Link href="/docs">
+                        <a href="/docs">
                             <IoDocumentText className="mr-2 h-4 w-4"/> View PlaceholderJS Docs
-                        </Link>
+                        </a>
                     </Button>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

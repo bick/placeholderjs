@@ -40,7 +40,7 @@ const Sidebar = () => {
                    data-dev-hint="sidebar; px-0 for frameless; px-2 for visually inset the navigation">
                 <nav data-dev-hint="main navigation" className="space-y-3">
                     <a href="/docs"
-                       className="flex items-center transition duration-200">
+                       className="flex items-center transition duration-200 ">
                         <span>Getting Started</span>
                     </a>
                     <a href="/docs/installation"
@@ -48,7 +48,7 @@ const Sidebar = () => {
                         <span>Installation</span>
                     </a>
                 </nav>
-                <span className="mt-8 mb-4 opacity-75">Usage</span>
+                <span className="mt-8 mb-4 opacity-50 font-semibold text-sm uppercase tracking-wider">Usage</span>
                 <nav data-dev-hint="main navigation" className="space-y-3">
                     <a href="/docs/usage/react"
                        className="flex items-center transition duration-200">
@@ -63,7 +63,7 @@ const Sidebar = () => {
                         <span>CDN</span>
                     </a>
                 </nav>
-                <span className="mt-8 mb-4 opacity-75">Contributing</span>
+                <span className="mt-8 mb-4 opacity-50 font-semibold text-sm uppercase tracking-wider">Contributing</span>
                 <nav data-dev-hint="main navigation" className="space-y-3">
                     <a href="/docs/usage/react"
                        className="flex items-center transition duration-200">
