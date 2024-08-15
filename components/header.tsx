@@ -50,6 +50,11 @@ const Header = () => {
 
                 <ul className="flex items-center max-md:hidden ml-auto">
                     <li>
+                        <a href="/#examples" className="text-white">
+                            Examples
+                        </a>
+                    </li>
+                    <li>
                         <a href="https://github.com/bick/placeholder/releases" className="text-white">
                             Changelog
                         </a>

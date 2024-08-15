@@ -3,6 +3,13 @@ import {Badge} from "@/components/ui/badge"
 import {FaNpm} from "react-icons/fa";
 import styles from "@/styles/layout.module.scss";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+import {Placeholder} from "placeholder"
 
 export default function Home() {
     return (
@@ -26,7 +33,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="usage container text-center">
+            <div className="usage container text-center" id="examples">
                 <Tabs defaultValue="cdn" className="w-full">
                     <div className="flex justify-center">
                         <TabsList className="mb-6 justify-center mx-auto">
@@ -57,6 +64,15 @@ export default function Home() {
                             </p>
                             <Code type="command" code="https://placeholderjs.com/500x500"/>
 
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <img src="https://placeholderjs.com/500x500" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-4">Text</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
@@ -65,6 +81,14 @@ export default function Home() {
                                 a <code>+</code> character for spaces.
                             </p>
                             <Code type="command" code="https://placeholderjs.com/500x500&text=Hello+World!"/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Text Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -74,16 +98,33 @@ export default function Home() {
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
                             <Code type="command"
-                                  code="https://placeholderjs.com/500x500&text=Hello+World!&color=_fff"/>
+                                  code="https://placeholderjs.com/500x500&text=Hello+World!&color=_FF0000"/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!&color=_FF0000" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify the background color by adding <code>background=</code> to the component.
-                                For now, we only support HEX values or named values (e.g. white). Since we can't use <code>#</code> for
+                                For now, we only support HEX values or named values (e.g. white). Since we can't
+                                use <code>#</code> for
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
-                            <Code type="command" code="https://placeholderjs.com/500x500&background=_000"/>
+                            <Code type="command" code="https://placeholderjs.com/500x500&background=_FF0000"/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!&background=_FF0000" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </div>
                     </TabsContent>
                     <TabsContent value="npm">
@@ -104,6 +145,14 @@ export default function Home() {
                                 component. Here is an example of how that works for a <code>500 x 500</code> image.
                             </p>
                             <Code type="command" code={`<Placeholder width="500" height="500" />`}/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <img src="https://placeholderjs.com/500x500" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-4">Text</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -114,6 +163,14 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" text="Hello World!" />`}/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <Placeholder width="500" height="500" text="Hello World!" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Text Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -123,6 +180,14 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" text="Hello World!" color="#fff"/>`}/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <Placeholder width="500" height="500" text="Hello World!" color="#fff"/>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -132,6 +197,14 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" background="#000" />`}/>
+                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                                <AccordionItem value="example-1">
+                                    <AccordionTrigger>View Example</AccordionTrigger>
+                                    <AccordionContent>
+                                        <Placeholder width="500" height="500" background="#FF000" />
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </div>
                     </TabsContent>
                 </Tabs>
