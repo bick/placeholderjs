@@ -2,8 +2,7 @@ import {NextRequest, NextResponse} from 'next/server';
 
 export async function GET(req: NextRequest, {params}: { params: { placeholder: string } }) {
     const {placeholder} = params;
-    const [dimensions, queryString] = placeholder.split('?');
-    const [width, height] = dimensions.split('x').map(Number);
+    const [width, height] = placeholder.split('x').map(Number);
 
     const MAX_DIMENSION = 4000;
 
@@ -23,14 +22,18 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
 
     if (searchParams.has('color')) {
         textColor = searchParams.get('color') || textColor;
+        // Replace _ with # to simulate the use of # in the URL
+        textColor = textColor.replace(/_/g, '#');
     }
 
     if (searchParams.has('background')) {
         backgroundColor = searchParams.get('background') || backgroundColor;
+        // Replace _ with # to simulate the use of # in the URL
+        backgroundColor = backgroundColor.replace(/_/g, '#');
     }
 
     const minDimension = Math.min(width, height);
-    const fontSize = minDimension * 0.05;
+    const fontSize = minDimension * 0.05; // Font size as 5% of the smaller dimension
 
     const svg = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
