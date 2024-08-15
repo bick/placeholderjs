@@ -22,14 +22,12 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
 
     if (searchParams.has('color')) {
         textColor = searchParams.get('color') || textColor;
-        // Replace _ with # to simulate the use of # in the URL
-        textColor = textColor.replace(/_/g, '#');
+        textColor = textColor.replace(/_/g, '#'); // Replace _ with #
     }
 
     if (searchParams.has('background')) {
         backgroundColor = searchParams.get('background') || backgroundColor;
-        // Replace _ with # to simulate the use of # in the URL
-        backgroundColor = backgroundColor.replace(/_/g, '#');
+        backgroundColor = backgroundColor.replace(/_/g, '#'); // Replace _ with #
     }
 
     const minDimension = Math.min(width, height);

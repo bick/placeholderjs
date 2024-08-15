@@ -74,7 +74,7 @@ export default function Home() {
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
                             <Code type="command"
-                                  code="https://placeholderjs.com/500x500?text=Hello+World!?color=_fff"/>
+                                  code="https://placeholderjs.com/500x500?text=Hello+World!&color=_fff"/>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -83,7 +83,7 @@ export default function Home() {
                                 For now, we only support HEX values or named values (e.g. white). Since we can't use <code>#</code> for
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
-                            <Code type="command" code="https://placeholderjs.com/500x500?background=_000"/>
+                            <Code type="command" code="https://placeholderjs.com/500x500&background=_000"/>
                         </div>
                     </TabsContent>
                     <TabsContent value="npm">
