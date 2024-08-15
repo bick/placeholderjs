@@ -2,7 +2,8 @@ import {NextRequest, NextResponse} from 'next/server';
 
 export async function GET(req: NextRequest, {params}: { params: { placeholder: string } }) {
     const {placeholder} = params;
-    const [width, height] = placeholder.split('x').map(Number);
+    const [dimensions] = placeholder.split('&');
+    const [width, height] = dimensions.split('x').map(Number);
 
     const MAX_DIMENSION = 4000;
 
@@ -14,7 +15,9 @@ export async function GET(req: NextRequest, {params}: { params: { placeholder: s
     let textColor = '#000000'; // Default text color
     let backgroundColor = '#cccccc'; // Default background color
 
-    const searchParams = req.nextUrl.searchParams;
+    // Manually parse the query string from the URL
+    const queryString = req.url.split('&').slice(1).join('&');
+    const searchParams = new URLSearchParams(queryString);
 
     if (searchParams.has('text')) {
         customText = searchParams.get('text')?.replace(/\+/g, ' ') || customText;

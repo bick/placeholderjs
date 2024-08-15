@@ -64,7 +64,7 @@ export default function Home() {
                                 an example of how that works for <code>Hello World!</code>. Use
                                 a <code>+</code> character for spaces.
                             </p>
-                            <Code type="command" code="https://placeholderjs.com/500x500?text=Hello+World!"/>
+                            <Code type="command" code="https://placeholderjs.com/500x500&text=Hello+World!"/>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Text Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
@@ -74,7 +74,7 @@ export default function Home() {
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
                             <Code type="command"
-                                  code="https://placeholderjs.com/500x500?text=Hello+World!&color=_fff"/>
+                                  code="https://placeholderjs.com/500x500&text=Hello+World!&color=_fff"/>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
