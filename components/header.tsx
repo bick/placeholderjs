@@ -4,7 +4,6 @@ import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
 import {FaGithub} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
-import {ModeToggle} from '@/components/theme-toggle';
 import {Badge} from '@/components/ui/badge';
 
 const Header = () => {
@@ -42,7 +41,7 @@ const Header = () => {
     return (
         <header id="nav" className={`header py-6 w-full z-50 ${isHomePage ? 'absolute' : ''}`}>
             <div className="container mx-auto flex items-center">
-                <a href='/' className="logo text-black dark:text-white">
+                <a href='/' className="logo text-white">
                     PlaceholderJS
                 </a>
                 <sup>
@@ -51,35 +50,22 @@ const Header = () => {
 
                 <ul className="flex items-center max-md:hidden ml-auto">
                     <li>
-                        <a href="/docs" className="text-black dark:text-white">
-                            Docs
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/#usage" className="text-black dark:text-white">
-                            Usage
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/bick/placeholder/releases" className="text-black dark:text-white">
+                        <a href="https://github.com/bick/placeholder/releases" className="text-white">
                             Changelog
                         </a>
                     </li>
                     <span aria-hidden="true"
-                          className="bg-[rgba(0,0,0,.25)] dark:bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
+                          className="bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
                     <li>
-                        <a href="https://github.com/bick/placeholderjs" className="text-black dark:text-white mx-2"
+                        <a href="https://github.com/bick/placeholder" className="text-white mx-2"
                            target="_blank">
                             <FaGithub className="text-xl"/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://npmjs.com/placeholder" target="_blank" className="text-black dark:text-white">
+                        <a href="https://npmjs.com/placeholder" target="_blank" className="text-white">
                             <SiNpm className="text-xl"/>
                         </a>
-                    </li>
-                    <li>
-                        <ModeToggle/>
                     </li>
                 </ul>
             </div>

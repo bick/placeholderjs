@@ -16,7 +16,7 @@ const customStyle = {
     ...Object.keys(okaidia).reduce((acc, key) => {
         const style = okaidia[key];
         if (style && typeof style === 'object') {
-            acc[key] = {color: style.color};
+            acc[key] = {color: '#fff'};
         }
         return acc;
     }, {} as any),
@@ -48,14 +48,15 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
     return (
         <div className='relative group'>
             <div
-                className={`${className} text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-[#F5F8FA] dark:bg-[#111] dark:border-[rgba(255,255,255,.15)] dark:text-white border border-[#d8dee4] rounded-lg p-4 pl-6`}>
+                className={`${className} text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-[#111] border-[rgba(255,255,255,.15)] text-white border rounded-lg p-4 pl-6`}>
                 <span className="flex gap-4">
                     {type === 'command' && (
                         <span className="shrink-0 text-gray-500">
                             $
                         </span>
                     )}
-                    <SyntaxHighlighter language="javascript" style={customStyle} className="code-container" showLineNumbers={type === 'code'}>
+                    <SyntaxHighlighter language="javascript" style={customStyle} className="code-container"
+                                       showLineNumbers={type === 'code'}>
                             {code}
                         </SyntaxHighlighter>
                 </span>
