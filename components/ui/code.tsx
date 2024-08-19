@@ -36,7 +36,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
     return (
         <div className='relative group'>
             <div
-                className={`${className} bg-[#222] md:inline-flex border rounded text-left items-center rounded-lg px-2 md:px-4 md:pl-6`}>
+                className={`${className} bg-[#222] md:inline-flex border rounded text-left items-center rounded-lg px-1 md:px-4 md:pl-6`}>
                 <span className="flex gap-1 md:gap-4">
                     {type === 'command' && (
                         <span className="flex my-auto w-2 text-gray-500">
