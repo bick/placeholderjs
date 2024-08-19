@@ -11,42 +11,48 @@ const Header: React.FC<HeaderProps> = ({version}) => {
     return (
         <header id="nav" className="header absolute py-6 w-full z-50">
             <div className="container mx-auto flex items-center">
-                <a href='/' className="logo text-white">
-                    PlaceholderJS
+                <a href="/" className="logo text-white" aria-label="PlaceholderJS Home">
+                    <span>PlaceholderJS</span>
                 </a>
                 <sup>
                     <Badge variant="outline" className="ml-2">v{version}</Badge>
                 </sup>
 
-                <ul className="flex items-center ml-auto">
-                    <li className="hidden md:flex">
-                        <a href="/#examples" className="text-white">
-                            Examples
-                        </a>
-                    </li>
-                    <li className="hidden md:flex">
-                        <a href="https://github.com/bick/placeholder/releases" className="text-white">
-                            Changelog
-                        </a>
-                    </li>
-                    <span aria-hidden="true"
-                          className="bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
-                    <li>
-                        <a href="https://github.com/bick/placeholder" className="text-white mx-2" target="_blank">
-                            <FaGithub className="text-xl"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://npmjs.com/placeholder" target="_blank" className="text-white">
-                            <SiNpm className="text-xl"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://discord.gg/xRZenePBsk" className="text-white mx-2" target="_blank">
-                            <FaDiscord className="text-xl"/>
-                        </a>
-                    </li>
-                </ul>
+                <nav aria-label="Main Navigation" className="ml-auto">
+                    <ul className="flex items-center">
+                        <li className="hidden md:flex">
+                            <a href="/#examples" className="text-white">
+                                <span>Examples</span>
+                            </a>
+                        </li>
+                        <li className="hidden md:flex">
+                            <a href="https://github.com/bick/placeholder/releases" target="_blank"
+                               rel="noopener noreferrer" className="text-white">
+                                <span>Changelog</span>
+                            </a>
+                        </li>
+                        <span aria-hidden="true"
+                              className="bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
+                        <li>
+                            <a href="https://github.com/bick/placeholder" target="_blank" rel="noopener noreferrer"
+                               className="text-white mx-2" aria-label="PlaceholderJS GitHub">
+                                <FaGithub className="text-xl"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://npmjs.com/placeholder" target="_blank" rel="noopener noreferrer"
+                               className="text-white" aria-label="PlaceholderJS on npm">
+                                <SiNpm className="text-xl"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/xRZenePBsk" target="_blank" rel="noopener noreferrer"
+                               className="text-white mx-2" aria-label="PlaceholderJS Discord">
+                                <FaDiscord className="text-xl"/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
     );
