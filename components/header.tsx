@@ -1,45 +1,15 @@
-'use client';
-
-import {useEffect, useState} from 'react';
-import {usePathname} from 'next/navigation';
-import {FaGithub, FaDiscord} from 'react-icons/fa';
+import {GetStaticProps} from 'next';
+import {FaDiscord, FaGithub} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
 import {Badge} from '@/components/ui/badge';
 
-const Header = () => {
-    const [version, setVersion] = useState('');
-    const pathname = usePathname();
-    const isHomePage = pathname === '/';
+interface HeaderProps {
+    version: string;
+}
 
-    useEffect(() => {
-        const checkVersion = () => {
-            const savedVersion = localStorage.getItem('npmVersion');
-            const timestamp = localStorage.getItem('timestamp');
-
-            if (savedVersion && timestamp && (new Date().getTime() - Number(timestamp) < 3600000)) {
-                setVersion(savedVersion);
-            } else {
-                fetch('https://registry.npmjs.org/placeholder')
-                    .then(response => response.json())
-                    .then(data => {
-                        const latestVersion = data['dist-tags'].latest;
-                        setVersion(latestVersion);
-                        localStorage.setItem('npmVersion', latestVersion);
-                        localStorage.setItem('timestamp', new Date().getTime().toString());
-                    })
-                    .catch(console.error);
-            }
-        };
-
-        checkVersion();
-
-        const intervalId = setInterval(checkVersion, 3600000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
+const Header: React.FC<HeaderProps> = ({version}) => {
     return (
-        <header id="nav" className={`header py-6 w-full z-50 ${isHomePage ? 'absolute' : ''}`}>
+        <header id="nav" className="header absolute py-6 w-full z-50">
             <div className="container mx-auto flex items-center">
                 <a href='/' className="logo text-white">
                     PlaceholderJS
@@ -62,8 +32,7 @@ const Header = () => {
                     <span aria-hidden="true"
                           className="bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
                     <li>
-                        <a href="https://github.com/bick/placeholder" className="text-white mx-2"
-                           target="_blank">
+                        <a href="https://github.com/bick/placeholder" className="text-white mx-2" target="_blank">
                             <FaGithub className="text-xl"/>
                         </a>
                     </li>
@@ -73,8 +42,7 @@ const Header = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="https://discord.gg/xRZenePBsk" className="text-white mx-2"
-                           target="_blank">
+                        <a href="https://discord.gg/xRZenePBsk" className="text-white mx-2" target="_blank">
                             <FaDiscord className="text-xl"/>
                         </a>
                     </li>
@@ -82,6 +50,24 @@ const Header = () => {
             </div>
         </header>
     );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+    let version = '';
+
+    try {
+        const res = await fetch('https://registry.npmjs.org/placeholder');
+        const data = await res.json();
+        version = data['dist-tags'].latest;
+    } catch (error) {
+        console.error('Failed to fetch npm version:', error);
+    }
+
+    return {
+        props: {
+            version,
+        },
+    };
 };
 
 export default Header;
