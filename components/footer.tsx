@@ -8,9 +8,9 @@ const Footer = () => {
 
     return (
         <footer className="flex py-24 mt-24 border-t w-full">
-            <div className="container flex text-center w-full justify-center">
+            <div className="container inline text-center w-full justify-center">
                 Made with ❤️ and ☕ by&nbsp;
-                <a href="https://owenbick.com" target="_blank">Owen Bick</a>&nbsp;under the MIT
+                <a href="https://owenbick.com" target="_blank">Owen Bick</a>&nbsp;in 2024 under the MIT
                 license
             </div>
         </footer>
