@@ -48,13 +48,13 @@ const Header = () => {
                     <Badge variant="outline" className="ml-2">v{version}</Badge>
                 </sup>
 
-                <ul className="flex items-center max-md:hidden ml-auto">
-                    <li>
+                <ul className="flex items-center ml-auto">
+                    <li className="hidden md:flex">
                         <a href="/#examples" className="text-white">
                             Examples
                         </a>
                     </li>
-                    <li>
+                    <li className="hidden md:flex">
                         <a href="https://github.com/bick/placeholder/releases" className="text-white">
                             Changelog
                         </a>

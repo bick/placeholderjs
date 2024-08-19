@@ -3,25 +3,20 @@ import {Badge} from "@/components/ui/badge"
 import {FaNpm} from "react-icons/fa";
 import styles from "@/styles/layout.module.scss";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from "@/components/ui/accordion"
 import {Placeholder} from "placeholder"
 
 export default function Home() {
     return (
         <div className={styles.layout}>
-            <div className="flex container mx-auto max-w-5xl text-center hero">
+            <div className="flex container mx-auto w-full md:max-w-5xl text-center hero">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">Ridiculously simple and
                         lightweight
                         placeholders</h1>
                     <p className="text-2xl mb-12">A free placeholder service designed for developers. Integrates
                         seamlessly with React & NextJS.</p>
-                    <div className="flex flex-col md:grid md:grid-cols-2">
+                    <div className="flex flex-col md:grid md:grid-cols-2 px-4">
                         <div className="flex flex-col mb-6 md:mb-0">
                             <span className="text-xl font-bold mb-2 h-8">CDN</span>
                             <Code type="command" code="https://placeholderjs.com/500x500"/>
@@ -50,10 +45,7 @@ export default function Home() {
                             <h2 className="text-4xl font-black leading-tight mb-4">Using the CDN</h2>
                             <p className="text-xl mb-24 opacity-75">
                                 To use PlaceholderJS via the CDN for simplicity and/or compatibility with non-JS
-                                tools,
-                                you can simply use the scheme <code>https://placeholderjs.com/HEIGHTxWIDTH</code>.
-                                All
-                                image placeholders <strong>must</strong> have a height and width defined.
+                                tools, image placeholders <strong>must</strong> have a height and width defined.
                             </p>
 
                             <h3 className="text-3xl font-black leading-tight mb-2">Size</h3>
@@ -64,11 +56,11 @@ export default function Home() {
                             </p>
                             <Code type="command" code="https://placeholderjs.com/500x500"/>
 
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <img src="https://placeholderjs.com/500x500" />
+                                        <img src="https://placeholderjs.com/500x500"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -81,11 +73,11 @@ export default function Home() {
                                 a <code>+</code> character for spaces.
                             </p>
                             <Code type="command" code="https://placeholderjs.com/500x500&text=Hello+World!"/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!" />
+                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -99,11 +91,11 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code="https://placeholderjs.com/500x500&text=Hello+World!&color=_FF0000"/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!&color=_FF0000" />
+                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!&color=_FF0000"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -117,11 +109,12 @@ export default function Home() {
                                 the color code, you must use an underscore _ before the HEX code.
                             </p>
                             <Code type="command" code="https://placeholderjs.com/500x500&background=_FF0000"/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <img src="https://placeholderjs.com/500x500&text=Hello+World!&background=_FF0000" />
+                                        <img
+                                            src="https://placeholderjs.com/500x500&text=Hello+World!&background=_FF0000"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -145,11 +138,11 @@ export default function Home() {
                                 component. Here is an example of how that works for a <code>500 x 500</code> image.
                             </p>
                             <Code type="command" code={`<Placeholder width="500" height="500" />`}/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <img src="https://placeholderjs.com/500x500" />
+                                        <img src="https://placeholderjs.com/500x500"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -163,11 +156,11 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" text="Hello World!" />`}/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <Placeholder width="500" height="500" text="Hello World!" />
+                                        <Placeholder width="500" height="500" text="Hello World!"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -180,7 +173,7 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" text="Hello World!" color="#fff"/>`}/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
@@ -197,11 +190,11 @@ export default function Home() {
                             </p>
                             <Code type="command"
                                   code={`<Placeholder width="500" height="500" background="#000" />`}/>
-                            <Accordion type="single" collapsible className="w-1/2 mt-4 mx-auto">
+                            <Accordion type="single" collapsible className="w-full md:w-1/2 mt-4 mx-auto">
                                 <AccordionItem value="example-1">
                                     <AccordionTrigger>View Example</AccordionTrigger>
                                     <AccordionContent>
-                                        <Placeholder width="500" height="500" background="#FF000" />
+                                        <Placeholder width="500" height="500" background="#FF000"/>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
