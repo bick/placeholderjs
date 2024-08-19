@@ -30,19 +30,23 @@ export default function Home() {
             </div>
             <div className="usage container text-center" id="examples">
                 <Tabs defaultValue="cdn" className="w-full">
-                    <div className="flex justify-center">
-                        <TabsList className="mb-6 justify-center mx-auto">
-                            <TabsTrigger value="cdn" className="text-xl font-bold">
-                                CDN
-                            </TabsTrigger>
-                            <TabsTrigger value="npm" className="text-xl font-bold flex items-center">
-                                <FaNpm className="mr-2"/> NPM
-                            </TabsTrigger>
+                    <div className="flex flex-col justify-center">
+                        <p className="px-12 py-2 mt-0 text-xl opacity-100">How do you want to use PlaceholderJS?</p>
+                        <TabsList className="mb-6 flex-col justify-center mx-auto">
+                            <div className="flex items-center">
+                                <TabsTrigger value="cdn" className="text-2xl font-bold border">
+                                    CDN
+                                </TabsTrigger>
+                                <span className="mx-4">or</span>
+                                <TabsTrigger value="npm" className="text-2xl font-bold flex items-center border">
+                                    <FaNpm className="mr-2"/> NPM
+                                </TabsTrigger>
+                            </div>
                         </TabsList>
                     </div>
                     <TabsContent value="cdn">
                         <div className="flex flex-col">
-                            <h2 className="text-4xl font-black leading-tight mb-4">Using the CDN</h2>
+                        <h2 className="text-4xl font-black leading-tight mb-4">Using the CDN</h2>
                             <p className="text-xl mb-24 opacity-75">
                                 To use PlaceholderJS via the CDN for simplicity and/or compatibility with non-JS
                                 tools, image placeholders <strong>must</strong> have a height and width defined.
