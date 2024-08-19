@@ -2,7 +2,7 @@
 const nextConfig = {
     basePath: "",
     reactStrictMode: true,
-    output: 'standalone',
+    output: 'export',
     pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
     images: {
         unoptimized: true,
