@@ -2,7 +2,7 @@
 
 import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
-import {FaGithub} from 'react-icons/fa';
+import {FaGithub, FaDiscord} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
 import {Badge} from '@/components/ui/badge';
 
@@ -70,6 +70,12 @@ const Header = () => {
                     <li>
                         <a href="https://npmjs.com/placeholder" target="_blank" className="text-white">
                             <SiNpm className="text-xl"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/xRZenePBsk" className="text-white mx-2"
+                           target="_blank">
+                            <FaDiscord className="text-xl"/>
                         </a>
                     </li>
                 </ul>
