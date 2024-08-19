@@ -35,9 +35,10 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
 
     return (
         <div className='relative group'>
-            <div
+            <button
+                onClick={handleCopy}
                 className={`${className} bg-[#222] md:inline-flex border rounded text-left items-center rounded-lg px-1 md:px-4 md:pl-6`}>
-                <span className="flex gap-1 md:gap-4">
+                <span className="flex items-center gap-1 md:gap-4">
                     {type === 'command' && (
                         <span className="flex my-auto w-2 text-gray-500">
                             $
@@ -50,7 +51,6 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                         theme={codepen}
                         wrapLongLines={true}
                     />
-                    <button onClick={handleCopy} className="ml-auto">
                     {copied ? (
                         <svg
                             className="shrink-0 h-5 w-5 ml-4 transition opacity-75 text-green-500 group-hover:opacity-100"
@@ -70,9 +70,8 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                                 d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"></path>
                         </svg>
                     )}
-                </button>
                 </span>
-            </div>
+            </button>
         </div>
     );
 };

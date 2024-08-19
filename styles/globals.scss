@@ -24,6 +24,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --radius: .5rem;
   }
 
   .dark {
@@ -117,6 +118,7 @@ a {
         &:hover {
           opacity: 1;
         }
+
         &.social {
           &:after {
             display: none;
@@ -207,4 +209,13 @@ code {
 
 .container {
   position: relative;
+}
+
+.border {
+  border: 1px solid rgba(255, 255, 255, .25);
+  transition: 0.2s ease;
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, .35);
+  }
 }
