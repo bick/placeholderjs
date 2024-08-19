@@ -35,19 +35,19 @@ const Header: React.FC<HeaderProps> = ({version}) => {
                               className="bg-[rgba(255,255,255,.25)] mx-2 hidden h-5 w-px sm:!inline-block"></span>
                         <li>
                             <a href="https://github.com/bick/placeholder" target="_blank" rel="noopener noreferrer"
-                               className="text-white mx-2" aria-label="PlaceholderJS GitHub">
+                               className="text-white mx-2 social" aria-label="PlaceholderJS GitHub">
                                 <FaGithub className="text-xl"/>
                             </a>
                         </li>
                         <li>
                             <a href="https://npmjs.com/placeholder" target="_blank" rel="noopener noreferrer"
-                               className="text-white" aria-label="PlaceholderJS on npm">
+                               className="text-white social" aria-label="PlaceholderJS on npm">
                                 <SiNpm className="text-xl"/>
                             </a>
                         </li>
                         <li>
                             <a href="https://discord.gg/xRZenePBsk" target="_blank" rel="noopener noreferrer"
-                               className="text-white mx-2" aria-label="PlaceholderJS Discord">
+                               className="text-white mx-2 social" aria-label="PlaceholderJS Discord">
                                 <FaDiscord className="text-xl"/>
                             </a>
                         </li>

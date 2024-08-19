@@ -117,10 +117,11 @@ a {
         &:hover {
           opacity: 1;
         }
-
-        &:after {
-          content: '';
-          display: none;
+        &.social {
+          &:after {
+            display: none;
+            content: '';
+          }
         }
       }
     }
