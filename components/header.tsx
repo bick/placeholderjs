@@ -1,4 +1,3 @@
-import {GetStaticProps} from 'next';
 import {FaDiscord, FaGithub} from 'react-icons/fa';
 import {SiNpm} from 'react-icons/si';
 import {Badge} from '@/components/ui/badge';
@@ -56,24 +55,6 @@ const Header: React.FC<HeaderProps> = ({version}) => {
             </div>
         </header>
     );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-    let version = '';
-
-    try {
-        const res = await fetch('https://registry.npmjs.org/placeholder');
-        const data = await res.json();
-        version = data['dist-tags'].latest;
-    } catch (error) {
-        console.error('Failed to fetch npm version:', error);
-    }
-
-    return {
-        props: {
-            version,
-        },
-    };
 };
 
 export default Header;
