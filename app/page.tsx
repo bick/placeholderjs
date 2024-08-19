@@ -19,11 +19,11 @@ export default function Home() {
                     <div className="flex flex-col md:grid md:grid-cols-2 px-4">
                         <div className="flex flex-col mb-6 md:mb-0">
                             <span className="text-xl font-bold mb-2 h-8">CDN</span>
-                            <Code type="command" code="https://placeholderjs.com/500x500"/>
+                            <Code type="command" code="https://placeholderjs.com/500x500" className="text-lg"/>
                         </div>
                         <div className="flex flex-col justify-center">
                             <span className="text-[42px] font-bold mb-2 mx-auto h-8 flex align-center"><FaNpm/></span>
-                            <Code type="command" code="npm install placeholder"/>
+                            <Code type="command" code="npm install placeholder" className="text-lg"/>
                         </div>
                     </div>
                 </div>
