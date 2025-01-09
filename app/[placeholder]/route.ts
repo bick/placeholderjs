@@ -4,7 +4,6 @@ const MAX_DIMENSION = 4000;
 const DEFAULT_TEXT_COLOR = '#000000';
 const DEFAULT_BG_COLOR = '#cccccc';
 
-// Helper to replace underscores with # for color codes
 function parseColor(color: string, defaultColor: string): string {
     if (!color) return defaultColor;
     return color.replace(/_/g, '#');
@@ -12,7 +11,7 @@ function parseColor(color: string, defaultColor: string): string {
 
 export async function GET(request: NextRequest, {params}: { params: { placeholder: string } }) {
     try {
-        // The placeholder param might look like: "300x400&text=Hello&color=fff&background=000&fontSize=24"
+        // Example URL: /300x180&text=Hello&color=fff&background=000&fontsize=25
         const {placeholder} = params;
         const [dimensions, ...rest] = placeholder.split('&');
         const [widthStr, heightStr] = dimensions.split('x');
@@ -37,42 +36,36 @@ export async function GET(request: NextRequest, {params}: { params: { placeholde
         let textColor = DEFAULT_TEXT_COLOR;
         let backgroundColor = DEFAULT_BG_COLOR;
 
-        // Parse any additional query string parameters
+        // Parse extra query params from the placeholder string
         const queryString = request.url.split('&').slice(1).join('&');
         const searchParams = new URLSearchParams(queryString);
 
-        // Custom text
         if (searchParams.has('text')) {
             const textValue = searchParams.get('text');
             if (textValue) {
-                // Replace + with space for query-encoded text
                 customText = textValue.replace(/\+/g, ' ');
             }
         }
 
-        // Custom text color
         if (searchParams.has('color')) {
             textColor = parseColor(searchParams.get('color') || '', DEFAULT_TEXT_COLOR);
         }
 
-        // Custom background color
         if (searchParams.has('background')) {
             backgroundColor = parseColor(searchParams.get('background') || '', DEFAULT_BG_COLOR);
         }
 
-        // Determine font size
+        // Determine font size: default to 5% of smaller dimension, override if `fontsize` param is valid
         const minDimension = Math.min(width, height);
-        let fontSize = Math.floor(minDimension * 0.05); // 5% of smaller dimension
+        let fontSize = Math.floor(minDimension * 0.05);
 
-        // Allow overriding the default font size
-        if (searchParams.has('fontSize')) {
-            const overrideFontSize = parseInt(searchParams.get('fontSize') || '', 10);
+        if (searchParams.has('fontsize')) {
+            const overrideFontSize = parseInt(searchParams.get('fontsize') || '', 10);
             if (!isNaN(overrideFontSize) && overrideFontSize > 0) {
                 fontSize = overrideFontSize;
             }
         }
 
-        // Build the SVG string
         const svg = `
       <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" fill="${backgroundColor}" />
@@ -81,7 +74,7 @@ export async function GET(request: NextRequest, {params}: { params: { placeholde
           y="50%"
           dominant-baseline="middle"
           text-anchor="middle"
-          font-size="${fontSize}"
+          font-size="${fontSize}px"
           fill="${textColor}"
           font-family='-apple-system, "Inter", sans-serif'>
           ${customText}
@@ -89,7 +82,6 @@ export async function GET(request: NextRequest, {params}: { params: { placeholde
       </svg>
     `;
 
-        // Return the SVG with production-ready headers
         return new NextResponse(svg, {
             headers: {
                 'Content-Type': 'image/svg+xml',
