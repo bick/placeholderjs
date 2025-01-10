@@ -162,7 +162,7 @@ export default function Home() {
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Font Size</h3>
                             <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
-                                Override the default font size by adding <code>fontsize=</code> to the URL (in pixels).
+                                Override the default font size by adding <code>fontSize=</code> to the URL (in pixels).
                                 This ensures the text is displayed at the specified pixel size. For example:
                             </p>
                             <Code
