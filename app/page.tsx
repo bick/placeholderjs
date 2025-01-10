@@ -90,7 +90,6 @@ export default function Home() {
 
                             {/* Text */}
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-4">Text</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify custom text in the placeholder image by adding your text to the URL. Here is
                                 an example of how that works for <code>Hello World!</code>. Use a <code>+</code> for
@@ -111,7 +110,6 @@ export default function Home() {
 
                             {/* Text Color */}
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Text Color</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify the text color by adding <code>color=</code> to the URL. For now, we only
                                 support HEX values or named values (e.g. white). Since we can't use <code>#</code> for
@@ -135,7 +133,6 @@ export default function Home() {
 
                             {/* Background Color */}
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify the background color by adding <code>background=</code> to the URL. For now, we
                                 only
@@ -160,7 +157,6 @@ export default function Home() {
 
                             {/* Font Size */}
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Font Size</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Override the default font size by adding <code>fontSize=</code> to the URL (in pixels).
                                 This ensures the text is displayed at the specified pixel size. For example:
@@ -214,7 +210,6 @@ export default function Home() {
                             </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-4">Text</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify custom text in the placeholder image by adding your text. Here is an example
                                 of how that works for <code>Hello World!</code>. Use a <code>+</code> character for
@@ -234,7 +229,6 @@ export default function Home() {
                             </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Text Color</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify the text color by adding <code>color=</code> to the component. For now, we
                                 only support HEX values or named values (e.g. white).
@@ -253,7 +247,6 @@ export default function Home() {
                             </Accordion>
 
                             <h3 className="text-3xl font-black leading-tight mt-12 mb-2">Background Color</h3>
-                            <Badge variant="outline" className="mx-auto">OPTIONAL</Badge>
                             <p className="text-xl mb-8 opacity-75">
                                 Specify the background color by adding <code>background=</code> to the component.
                                 For now, we only support HEX values or named values (e.g. white).
