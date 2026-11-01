@@ -37,7 +37,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
         <div className='relative group'>
             <button
                 onClick={handleCopy}
-                className={`${className} bg-[#222] md:inline-flex border rounded text-left items-center rounded-lg px-1 md:px-4 md:pl-6`}>
+                className={`${className} bg-[#222] md:inline-flex border border-white/25 hover:border-white/35 transition-all duration-200 ease-ease rounded text-left items-center rounded-lg px-1 md:px-4 md:pl-6`}>
                 <span className="flex items-center gap-1 md:gap-4">
                     {type === 'command' && (
                         <span className="flex my-auto w-2 text-gray-500">

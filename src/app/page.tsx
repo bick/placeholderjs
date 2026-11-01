@@ -1,15 +1,14 @@
 import Code from "@/components/ui/code";
 import {Badge} from "@/components/ui/badge";
 import {FaNpm} from "react-icons/fa";
-import styles from "@/styles/layout.module.scss";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {Placeholder} from "placeholder";
 
 export default function Home() {
     return (
-        <div className={styles.layout}>
-            <div className="flex container mx-auto w-full md:max-w-5xl text-center hero">
+        <div className="animate-hello w-full py-0 mx-auto">
+            <div className="relative flex container mx-auto w-full md:max-w-5xl text-center px-0 py-28 bg-[url('/background.svg')] bg-cover bg-no-repeat bg-[position:center_100%]">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
                         Ridiculously simple and lightweight placeholders
@@ -41,7 +40,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="usage container text-center" id="examples">
+            <div className="relative container text-center" id="examples">
                 <Tabs defaultValue="cdn" className="w-full">
                     <div className="flex flex-col justify-center">
                         <p className="px-12 py-2 mt-0 text-xl opacity-100">
@@ -49,11 +48,11 @@ export default function Home() {
                         </p>
                         <TabsList className="mb-6 flex-col justify-center mx-auto">
                             <div className="flex items-center">
-                                <TabsTrigger value="cdn" className="text-2xl font-bold border">
+                                <TabsTrigger value="cdn" className="text-2xl font-bold border border-white/25 hover:border-white/35">
                                     CDN
                                 </TabsTrigger>
                                 <span className="mx-4">or</span>
-                                <TabsTrigger value="npm" className="text-2xl font-bold flex items-center border">
+                                <TabsTrigger value="npm" className="text-2xl font-bold flex items-center border border-white/25 hover:border-white/35">
                                     <FaNpm className="mr-2"/> NPM
                                 </TabsTrigger>
                             </div>

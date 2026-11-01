@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Toaster} from "@/components/ui/toaster"
-import "@/styles/globals.scss";
+import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import {GoogleAnalytics} from '@next/third-parties/google'
@@ -25,7 +25,7 @@ export default async function RootLayout({children}: { children: React.ReactNode
     const version = await fetchVersion();
 
     return (
-        <html lang="en">
+        <html lang="en" className="scroll-smooth">
         <body>
         <Header version={version}/>
         {children}

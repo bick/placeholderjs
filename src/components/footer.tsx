@@ -8,7 +8,7 @@ const Footer = () => {
 
     return (
         <footer className="flex py-24 mt-24 w-full">
-            <div className="container inline text-center w-full justify-center">
+            <div className="relative container inline text-center w-full justify-center">
                 Made with ❤️ and ☕ in 2025 by&nbsp;
                 <a href="https://owenbick.com" target="_blank">Owen Bick</a> under the MIT
                 license
