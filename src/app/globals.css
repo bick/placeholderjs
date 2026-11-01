@@ -102,15 +102,18 @@
   }
 
   h1 {
-    @apply text-[2rem] font-semibold leading-none mb-8;
+    @apply text-[2rem] font-semibold mb-8;
+    line-height: 1;
   }
 
   h2 {
-    @apply text-2xl font-semibold leading-normal mt-8 mb-2;
+    @apply text-2xl font-semibold mt-8 mb-2;
+    line-height: 1.5;
   }
 
   p {
-    @apply leading-loose my-4;
+    @apply my-4;
+    line-height: 2;
   }
 
   code {

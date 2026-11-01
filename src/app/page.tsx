@@ -10,7 +10,7 @@ export default function Home() {
         <div className="animate-hello w-full py-0 mx-auto">
             <div className="relative flex mx-auto w-full md:max-w-5xl text-center px-0 py-28 bg-[url('/background.svg')] bg-cover bg-no-repeat bg-[position:center_100%]">
                 <div className="flex flex-col my-auto">
-                    <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+                    <h1 className="text-5xl md:text-7xl font-black leading-tight md:leading-none mb-6">
                         Ridiculously simple and lightweight placeholders
                     </h1>
                     <p className="text-2xl mb-12">
