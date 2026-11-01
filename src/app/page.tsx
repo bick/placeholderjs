@@ -8,7 +8,7 @@ import {Placeholder} from "placeholder";
 export default function Home() {
     return (
         <div className="animate-hello w-full py-0 mx-auto">
-            <div className="relative flex container mx-auto w-full md:max-w-5xl text-center px-0 py-28 bg-[url('/background.svg')] bg-cover bg-no-repeat bg-[position:center_100%]">
+            <div className="relative flex mx-auto w-full md:max-w-5xl text-center px-0 py-28 bg-[url('/background.svg')] bg-cover bg-no-repeat bg-[position:center_100%]">
                 <div className="flex flex-col my-auto">
                     <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
                         Ridiculously simple and lightweight placeholders
@@ -40,7 +40,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="relative container text-center" id="examples">
+            <div className="relative w-full mx-auto px-8 min-[1200px]:max-w-[1200px] text-center" id="examples">
                 <Tabs defaultValue="cdn" className="w-full">
                     <div className="flex flex-col justify-center">
                         <p className="px-12 py-2 mt-0 text-xl opacity-100">

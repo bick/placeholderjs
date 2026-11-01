@@ -40,7 +40,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                 className={`${className} bg-[#222] md:inline-flex border border-white/25 hover:border-white/35 transition-all duration-200 ease-ease rounded text-left items-center rounded-lg px-1 md:px-4 md:pl-6`}>
                 <span className="flex items-center gap-1 md:gap-4">
                     {type === 'command' && (
-                        <span className="flex my-auto w-2 text-gray-500">
+                        <span className="flex my-auto w-2 text-[#6b7280]">
                             $
                         </span>
                     )}
@@ -53,7 +53,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                     />
                     {copied ? (
                         <svg
-                            className="shrink-0 h-5 w-5 ml-4 transition opacity-75 text-green-500 group-hover:opacity-100"
+                            className="shrink-0 h-5 w-5 ml-4 transition opacity-75 text-[#22c55e] group-hover:opacity-100"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd"
@@ -62,7 +62,7 @@ const Code: React.FC<CodeProps> = ({code, className, type}) => {
                         </svg>
                     ) : (
                         <svg
-                            className="shrink-0 h-5 w-5 ml-4 transition opacity-75 text-gray-500 group-hover:opacity-100"
+                            className="shrink-0 h-5 w-5 ml-4 transition opacity-75 text-[#6b7280] group-hover:opacity-100"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>

@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({version}) => {
     return (
         <header id="nav" className="absolute py-6 w-full z-50">
-            <div className="relative container mx-auto flex items-center">
+            <div className="relative w-full mx-auto px-8 min-[1200px]:max-w-[1200px] flex items-center">
                 <a href="/" className="text-white font-semibold text-[1.25rem] m-0" aria-label="PlaceholderJS Home">
                     <span>PlaceholderJS</span>
                 </a>
