@@ -6,7 +6,6 @@ const nextConfig = {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
     images: {
         unoptimized: true,
-        domains: ['placeholderjs.com'],
     },
 };
 
